@@ -75,18 +75,13 @@ st.write("Input the some information about the electricity you have bought this 
 
 st.divider()
 
-def number_field(label, value=0, columns=None, **input_params):
-    c1, c2 = st.columns([1, 1])
+def number_field(label, value=0, **input_params):
+    c1, c2 = st.columns([2, 3])  # give label a bit less space than input
 
-    # Display field name with some alignment
-    #c1.markdown("##")
-    c1.markdown(label)
-
-    # Sets a default key parameter to avoid duplicate key errors
     input_params.setdefault("key", label)
 
-    # Forward text input parameters
-    return c2.number_input("", value=value, **input_params)
+    c1.write(label)
+    return c2.number_input(" ", value=value,label_visibility="collapsed",**input_params)
 
 meter=number_field("Number on meter:")
 spent_R=number_field("Amount spent on electricity this month:")
