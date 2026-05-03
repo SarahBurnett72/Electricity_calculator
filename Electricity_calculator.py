@@ -79,7 +79,7 @@ def number_field(label, value=0, columns=None, **input_params):
     c1, c2 = st.columns([1, 1])
 
     # Display field name with some alignment
-    c1.markdown("##")
+    #c1.markdown("##")
     c1.markdown(label)
 
     # Sets a default key parameter to avoid duplicate key errors
